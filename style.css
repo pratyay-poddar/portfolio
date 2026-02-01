@@ -326,8 +326,6 @@ body {
 
 /* --- CONTACT --- */
 .card {
-  width: 29rem;
-  height: 32.2rem;
   border-radius: 35px;
   background: #08040a;
   border: 1px solid rgba(255, 255, 255, 0.05);
