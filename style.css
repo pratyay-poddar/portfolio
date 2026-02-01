@@ -326,6 +326,8 @@ body {
 
 /* --- CONTACT --- */
 .card {
+  width: 350px; /* Or your preferred width */
+  max-width: 90vw;
   border-radius: 35px;
   background: #08040a;
   border: 1px solid rgba(255, 255, 255, 0.05);
@@ -404,7 +406,7 @@ body {
         display: flex;
         justify-content: center;
         padding: 0 15px;
-        z-index: 9999;
+        z-index: 10000;
     }
 
   .nav-island {
