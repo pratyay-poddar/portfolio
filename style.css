@@ -80,13 +80,15 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: center;
+  justify-content: center; 
+  justify-content: space-around; 
+  width: 40rem;
+  height: 4.5rem;
 }
-.nav-links {
+ .nav-links {
   display: flex;
-  gap: 5px;
-  justify-content: center;
-}
+  justify-content: center; 
+} 
 .nav-btn {
   color: var(--text-secondary);
   padding: 10px 18px;
@@ -324,12 +326,13 @@ body {
 
 /* --- CONTACT --- */
 .card {
-  width: clamp(340px, 95%, 450px);
+  width: 29rem;
+  height: 32.2rem;
   border-radius: 35px;
   background: #08040a;
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 0 60px -15px var(--glow-rgba);
-  padding-bottom: 40px;
+  padding-bottom: 35px;
   margin: auto;
 }
 .profile-wrapper {
@@ -371,7 +374,7 @@ body {
   padding: 15px;
   border-radius: 100px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  margin: 20px 40px 0;
+  margin: 40px 40px 0;
 }
 .social-island a {
   color: #fff;
