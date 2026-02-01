@@ -396,3 +396,47 @@ body {
     top: auto;
   }
 }
+/* --- THE EASY MANUAL MOBILE FIX --- */
+@media (max-width: 600px) {
+    /* 1. Reset font sizes for mobile readability */
+    html { font-size: 14px; } 
+
+    /* 2. Fix the Hero section spacing */
+    .page-content { padding: 100px 15px 120px; }
+    .hero-title { font-size: 2.5rem; }
+    .hero-actions { flex-direction: column; width: 100%; }
+    .btn-primary, .btn-secondary { width: 100%; text-align: center; }
+
+    /* 3. Make the Nav Bar big and easy to tap */
+    .nav-container { 
+        bottom: 15px; 
+        top: auto; 
+        width: 100%; 
+        padding: 0 10px; 
+        left: 0; 
+        transform: none; 
+    }
+    
+    .nav-island { 
+        width: 100%; 
+        border-radius: 20px; 
+        padding: 10px; 
+    }
+
+    .nav-links { 
+        display: flex; 
+        justify-content: space-around; 
+    }
+
+    .nav-btn { 
+        flex: 1; 
+        font-size: 1.6rem; /* Huge icons for thumbs */
+        padding: 12px 0;
+        justify-content: center;
+    }
+
+    .nav-btn span { display: none; } /* Hide text for a cleaner look */
+
+    /* 4. Fix image size */
+    .hero-image-glow { width: 220px; height: 220px; }
+}
