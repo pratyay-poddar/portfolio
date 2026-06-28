@@ -83,6 +83,7 @@ body {
 .nav-links {
   display: flex;
   justify-content: center;
+  gap: 8px;
 }
 .nav-btn {
   color: var(--text-secondary);
