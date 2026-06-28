@@ -58,3 +58,70 @@ function animate() {
 init();
 animate();
 window.addEventListener('resize', init);
+
+// Typewriter effect and Loader
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Setup Loader
+    const loaderWrapper = document.getElementById('loader-wrapper');
+    const terminalText = document.getElementById('terminal-text');
+    
+    if (loaderWrapper && terminalText) {
+        document.body.classList.add('loading');
+        const bootSequence = [
+            "> initializing_environment...",
+            "> loading_assets [100%]",
+            "> welcome_pratyay;"
+        ];
+        
+        let lineIndex = 0;
+        let charIndex = 0;
+        
+        function typeLoader() {
+            if (lineIndex < bootSequence.length) {
+                const currentLine = bootSequence[lineIndex];
+                if (charIndex < currentLine.length) {
+                    terminalText.innerHTML += currentLine.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeLoader, 30 + Math.random() * 40);
+                } else {
+                    terminalText.innerHTML += "<br>";
+                    lineIndex++;
+                    charIndex = 0;
+                    setTimeout(typeLoader, 400);
+                }
+            } else {
+                setTimeout(() => {
+                    loaderWrapper.classList.add('fade-out');
+                    document.body.classList.remove('loading');
+                    setTimeout(startHeroTypewriter, 500); // Start hero typing after fade starts
+                }, 800);
+            }
+        }
+        setTimeout(typeLoader, 300);
+    } else {
+        startHeroTypewriter();
+    }
+
+    // 2. Hero Typewriter Function
+    function startHeroTypewriter() {
+        const nameEl = document.querySelector('.highlight');
+        if (nameEl && !nameEl.dataset.typed) {
+            nameEl.dataset.typed = 'true'; // prevent double execution
+            const text = nameEl.textContent.trim();
+            nameEl.textContent = '';
+            nameEl.style.borderRight = '3px solid var(--accent-color)';
+            nameEl.style.animation = 'blink-caret 0.75s step-end infinite';
+            nameEl.style.paddingRight = '5px';
+            
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    nameEl.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 120);
+                }
+            }
+            setTimeout(typeWriter, 100);
+        }
+    }
+});
