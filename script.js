@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const bootSequence = [
             "> initializing_environment...",
             "> loading_assets [100%]",
-            "> welcome_pratyay;"
+            "> connection_established;"
         ];
         
         let lineIndex = 0;
