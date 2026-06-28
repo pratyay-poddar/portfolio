@@ -498,3 +498,46 @@ body.loading {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+/* --- SPA TRANSITION LOADER --- */
+.page-transition-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-dark);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+.page-transition-wrapper.active {
+  opacity: 1;
+  visibility: visible;
+}
+.page-transition-text {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--accent-glow);
+  font-size: 1.5rem;
+}
+.page-transition-text .cursor {
+  display: inline-block;
+  width: 12px;
+  height: 1.5rem;
+  background-color: var(--accent-glow);
+  vertical-align: middle;
+  margin-left: 5px;
+  animation: blink-loader-cursor 0.8s step-end infinite;
+}
+
+/* Page fade in animation */
+.page-content {
+  transition: opacity 0.3s ease;
+}
+.page-content.fade-out {
+  opacity: 0;
+}
