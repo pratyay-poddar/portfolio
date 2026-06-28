@@ -103,6 +103,17 @@ body {
 }
 
 /* --- GLOBAL LAYOUT --- */
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .page-content {
   padding: 140px 20px 80px;
   display: flex;
@@ -111,6 +122,7 @@ body {
   min-height: 100vh;
   position: relative;
   z-index: 10;
+  animation: contentFadeIn 0.8s ease-out forwards;
 }
 .page-title {
   font-size: clamp(2.2rem, 5vw, 3.2rem);
